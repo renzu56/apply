@@ -24,8 +24,8 @@ function App() {
   const productBoxStyle = isMobile
     ? {
         position: "relative",
-        width: "100%",
-        maxWidth: "480px",
+        width: "80%",
+        maxWidth: "450px",
         margin: "16px auto 20px auto",
         left: 0,
         right: 0,
@@ -134,7 +134,7 @@ function App() {
             gap: "0.5rem",
             zIndex: 2,
             justifyContent: "center",
-            width: "100%"
+            width: "80%"
           }}>
             {COVER_URLS.map((url, idx) => (
               <img
