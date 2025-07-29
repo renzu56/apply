@@ -20,30 +20,29 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Responsive style for the product box
+  // Clean, consistent style for the product box
   const productBoxStyle = isMobile
     ? {
-        position: "static",
-        width: "100vw",
-        maxWidth: "100vw",
+        position: "relative",
+        width: "100%",
+        maxWidth: "480px",
+        margin: "16px auto 20px auto",
         left: 0,
         right: 0,
         top: 0,
         transform: "none",
-        background: "rgba(255,255,255,0.95)",
-        padding: "14px 6vw 14px 6vw",
-        borderRadius: "0 0 18px 18px",
-        alignItems: "center",
-        minWidth: 0,
-        boxShadow: "0 2px 12px 0 rgba(76,110,255,0.11)",
+        background: "rgba(255,255,255,0.96)",
+        padding: "16px 10px 16px 10px",
+        borderRadius: "16px",
         display: "flex",
         flexDirection: "column",
-        gap: "0.7rem",
+        alignItems: "center",
+        gap: "0.6rem",
         cursor: "pointer",
-        marginBottom: "16px",
-        border: "none",
+        boxShadow: "0 3px 14px 0 rgba(40,40,60,0.11)",
+        border: "1px solid #eaeaea",
         overflow: "hidden",
-        backdropFilter: "blur(7px)",
+        backdropFilter: "blur(6px)",
         zIndex: 12,
       }
     : {
@@ -68,20 +67,9 @@ function App() {
         zIndex: 11,
       };
 
-  // Responsive highlight style
+  // Remove the blue glossy highlight on mobile for a cleaner look
   const highlightStyle = isMobile
-    ? {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "24%",
-        background:
-          "linear-gradient(110deg,rgba(255,255,255,0.19) 0%,rgba(255,255,255,0.07) 98%)",
-        borderRadius: "0 0 68px 68px / 15% 15% 85% 85%",
-        pointerEvents: "none",
-        zIndex: 1
-      }
+    ? { display: "none" }
     : {
         position: "absolute",
         top: 0,
@@ -99,7 +87,7 @@ function App() {
     <Router>
       <Navbar />
       <div style={{ position: "relative", minHeight: "100vh" }}>
-        {/* Glassy Floating Product Box */}
+        {/* Product Box */}
         <div
           onClick={() => window.open(GUMROAD_URL, "_blank")}
           style={productBoxStyle}
@@ -118,14 +106,16 @@ function App() {
             }
           }}
         >
-          {/* Glossy highlight */}
+          {/* Glossy highlight (desktop only) */}
           <div style={highlightStyle} />
           {/* Titles */}
           <span style={{
             color: "#2946ff",
             fontWeight: 600,
             fontSize: "1.09rem",
-            zIndex: 2
+            zIndex: 2,
+            textAlign: "center",
+            width: "100%"
           }}>
             Current Products
           </span>
@@ -133,18 +123,28 @@ function App() {
             color: "#555",
             fontSize: "1.01rem",
             marginBottom: 4,
-            zIndex: 2
+            zIndex: 2,
+            textAlign: "center",
+            width: "100%"
           }}>
             Slito EX
           </span>
-          <div style={{ display: "flex", gap: "0.5rem", zIndex: 2 }}>
+          <div style={{
+            display: "flex",
+            gap: "0.5rem",
+            zIndex: 2,
+            justifyContent: "center",
+            width: "100%"
+          }}>
             {COVER_URLS.map((url, idx) => (
               <img
                 key={idx}
                 src={url}
                 alt={`Slito EX cover ${idx + 1}`}
                 style={{
-                  width: "92px",
+                  width: isMobile ? "44vw" : "92px",
+                  maxWidth: "140px",
+                  minWidth: "70px",
                   height: "auto",
                   borderRadius: "10px",
                   boxShadow: "0 3px 12px 0 rgba(50,80,200,0.10)"
