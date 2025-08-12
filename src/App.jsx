@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import ApplyPage from "./pages/ApplyPage";
-
+import About from "./pages/About.jsx";
 // Gumroad cover image URLs
 const COVER_URLS = [
-  "https://public-files.gumroad.com/v3sv7shg4ylkw7d25593t94su50o",
-  "https://public-files.gumroad.com/agj78oacqss5tre9xdrr59o4rdyv"
+  "https://public-files.gumroad.com/v3sv7shg4ylkw7d25593t94su50o"
 ];
 const GUMROAD_URL = "https://lennardfeist.gumroad.com/l/slitoex";
 
@@ -157,6 +156,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/apply" element={<ApplyPage />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>
