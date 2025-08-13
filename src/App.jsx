@@ -1,14 +1,19 @@
+// src/App.jsx
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import ApplyPage from "./pages/ApplyPage";
 import About from "./pages/About.jsx";
-// Gumroad cover image URLs
+import Sales from "./pages/Sales.jsx"; // ← the page from the canvas
+
+// Cover image(s) for the overlay card (keep if you like the look)
 const COVER_URLS = [
   "https://public-files.gumroad.com/v3sv7shg4ylkw7d25593t94su50o"
 ];
-const GUMROAD_URL = "https://lennardfeist.gumroad.com/l/slitoex";
+
+// ✅ Use your real Digistore checkout link
+const DIGISTORE_URL = "https://www.digistore24.com/product/629295";
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 650);
@@ -19,7 +24,7 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Clean, consistent style for the product box
+  // --- styles from your version (unchanged except minor tidy) ---
   const productBoxStyle = isMobile
     ? {
         position: "relative",
@@ -52,7 +57,8 @@ function App() {
         background: "rgba(255,255,255,0.65)",
         padding: "20px 28px 22px 28px",
         borderRadius: "20px",
-        boxShadow: "0 16px 48px 0 rgba(76,110,255,0.17), 0 3px 16px 0 rgba(30,30,90,0.10)",
+        boxShadow:
+          "0 16px 48px 0 rgba(76,110,255,0.17), 0 3px 16px 0 rgba(30,30,90,0.10)",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
@@ -66,7 +72,6 @@ function App() {
         zIndex: 11,
       };
 
-  // Remove the blue glossy highlight on mobile for a cleaner look
   const highlightStyle = isMobile
     ? { display: "none" }
     : {
@@ -79,25 +84,26 @@ function App() {
           "linear-gradient(110deg,rgba(255,255,255,0.19) 0%,rgba(255,255,255,0.04) 98%)",
         borderRadius: "20px 20px 68px 68px / 18% 18% 85% 85%",
         pointerEvents: "none",
-        zIndex: 1
+        zIndex: 1,
       };
 
   return (
     <Router>
       <Navbar />
+
       <div style={{ position: "relative", minHeight: "100vh" }}>
-        {/* Product Box */}
+        {/* Product Box overlay — opens Digistore now */}
         <div
-          onClick={() => window.open(GUMROAD_URL, "_blank")}
+          onClick={() => window.open(DIGISTORE_URL, "_blank")}
           style={productBoxStyle}
-          onMouseOver={e => {
+          onMouseOver={(e) => {
             if (!isMobile) {
               e.currentTarget.style.boxShadow =
                 "0 24px 60px 0 rgba(76,110,255,0.28), 0 5px 20px 0 rgba(30,30,90,0.16)";
               e.currentTarget.style.background = "rgba(255,255,255,0.82)";
             }
           }}
-          onMouseOut={e => {
+          onMouseOut={(e) => {
             if (!isMobile) {
               e.currentTarget.style.boxShadow =
                 "0 16px 48px 0 rgba(76,110,255,0.17), 0 3px 16px 0 rgba(30,30,90,0.10)";
@@ -105,36 +111,40 @@ function App() {
             }
           }}
         >
-          {/* Glossy highlight (desktop only) */}
           <div style={highlightStyle} />
-          {/* Titles */}
-          <span style={{
-            color: "#2946ff",
-            fontWeight: 600,
-            fontSize: "1.09rem",
-            zIndex: 2,
-            textAlign: "center",
-            width: "100%"
-          }}>
+          <span
+            style={{
+              color: "#2946ff",
+              fontWeight: 600,
+              fontSize: "1.09rem",
+              zIndex: 2,
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
             Current Products
           </span>
-          <span style={{
-            color: "#555",
-            fontSize: "1.01rem",
-            marginBottom: 4,
-            zIndex: 2,
-            textAlign: "center",
-            width: "100%"
-          }}>
+          <span
+            style={{
+              color: "#555",
+              fontSize: "1.01rem",
+              marginBottom: 4,
+              zIndex: 2,
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
             Slito EX
           </span>
-          <div style={{
-            display: "flex",
-            gap: "0.5rem",
-            zIndex: 2,
-            justifyContent: "center",
-            width: "80%"
-          }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "0.5rem",
+              zIndex: 2,
+              justifyContent: "center",
+              width: "80%",
+            }}
+          >
             {COVER_URLS.map((url, idx) => (
               <img
                 key={idx}
@@ -146,17 +156,19 @@ function App() {
                   minWidth: "70px",
                   height: "auto",
                   borderRadius: "10px",
-                  boxShadow: "0 3px 12px 0 rgba(50,80,200,0.10)"
+                  boxShadow: "0 3px 12px 0 rgba(50,80,200,0.10)",
                 }}
               />
             ))}
           </div>
         </div>
-        {/* Main content routes */}
+
+        {/* Routes */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/apply" element={<ApplyPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/sales" element={<Sales />} /> {/* ← NEW */}
         </Routes>
       </div>
     </Router>
