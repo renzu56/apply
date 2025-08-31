@@ -6,6 +6,7 @@ import LandingPage from "./pages/LandingPage";
 import ApplyPage from "./pages/ApplyPage";
 import About from "./pages/About.jsx";
 import Sales from "./pages/Sales.jsx"; // ← the page from the canvas
+import Rechtliches from "./pages/Rechtliches.jsx";
 
 // Cover image(s) for the overlay card (keep if you like the look)
 const COVER_URLS = [
@@ -91,77 +92,7 @@ function App() {
     <Router>
       <Navbar />
 
-      <div style={{ position: "relative", minHeight: "100vh" }}>
-        {/* Product Box overlay — opens Digistore now */}
-        <div
-          onClick={() => window.open(DIGISTORE_URL, "_blank")}
-          style={productBoxStyle}
-          onMouseOver={(e) => {
-            if (!isMobile) {
-              e.currentTarget.style.boxShadow =
-                "0 24px 60px 0 rgba(76,110,255,0.28), 0 5px 20px 0 rgba(30,30,90,0.16)";
-              e.currentTarget.style.background = "rgba(255,255,255,0.82)";
-            }
-          }}
-          onMouseOut={(e) => {
-            if (!isMobile) {
-              e.currentTarget.style.boxShadow =
-                "0 16px 48px 0 rgba(76,110,255,0.17), 0 3px 16px 0 rgba(30,30,90,0.10)";
-              e.currentTarget.style.background = "rgba(255,255,255,0.65)";
-            }
-          }}
-        >
-          <div style={highlightStyle} />
-          <span
-            style={{
-              color: "#2946ff",
-              fontWeight: 600,
-              fontSize: "1.09rem",
-              zIndex: 2,
-              textAlign: "center",
-              width: "100%",
-            }}
-          >
-            Current Products
-          </span>
-          <span
-            style={{
-              color: "#555",
-              fontSize: "1.01rem",
-              marginBottom: 4,
-              zIndex: 2,
-              textAlign: "center",
-              width: "100%",
-            }}
-          >
-            Slito EX
-          </span>
-          <div
-            style={{
-              display: "flex",
-              gap: "0.5rem",
-              zIndex: 2,
-              justifyContent: "center",
-              width: "80%",
-            }}
-          >
-            {COVER_URLS.map((url, idx) => (
-              <img
-                key={idx}
-                src={url}
-                alt={`Slito EX cover ${idx + 1}`}
-                style={{
-                  width: isMobile ? "44vw" : "92px",
-                  maxWidth: "140px",
-                  minWidth: "70px",
-                  height: "auto",
-                  borderRadius: "10px",
-                  boxShadow: "0 3px 12px 0 rgba(50,80,200,0.10)",
-                }}
-              />
-            ))}
-          </div>
-        </div>
+    <div>
 
         {/* Routes */}
         <Routes>
@@ -169,6 +100,7 @@ function App() {
           <Route path="/apply" element={<ApplyPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/sales" element={<Sales />} /> {/* ← NEW */}
+          <Route path="/rechtliches" element={<Rechtliches />} />
         </Routes>
       </div>
     </Router>
