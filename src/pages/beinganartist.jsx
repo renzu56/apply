@@ -29,13 +29,16 @@ export default function BeingAnArtist() {
               musicians who want to grow their audience and build a thriving music career—without
               constantly selling, spamming, or pouring money into ads. In this book, you’ll get
               actionable strategies to help you plan content, build consistency, tell better
-              stories, and convert fans into real supporters.
+              stories, and convert fans into real supporters.  
+                   </p>
+            <p>
+              <strong> 60-Day Money-Back Guarantee:   
 
-              <strong>60-Day Money-Back Guarantee </strong>
-              We want you to be completely satisfied with your purchase.
+              </strong>
+                <p>We want you to be completely satisfied with your purchase.
                If for any reason you’re not happy, simply contact our support team 
                within 60 days of your purchase, and we’ll issue a full refund.
-
+</p>
             </p>
 
             <div className="cta-row">
