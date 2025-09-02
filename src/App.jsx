@@ -8,6 +8,7 @@ import About from "./pages/About.jsx";
 import Sales from "./pages/Sales.jsx"; // ← the page from the canvas
 import Rechtliches from "./pages/Rechtliches.jsx";
 import BeingAnArtist from "./pages/beinganartist.jsx";
+import Slitoex from "./pages/beat.jsx"
 
 // Cover image(s) for the overlay card (keep if you like the look)
 const COVER_URLS = [
@@ -103,6 +104,7 @@ function App() {
           <Route path="/sales" element={<Sales />} /> {/* ← NEW */}
           <Route path="/rechtliches" element={<Rechtliches />} />
             <Route path="/being-an-artist" element={<BeingAnArtist />} />
+            <Route path="/beat" element={<Slitoex />} /> {/* ← NEW */}
         </Routes>
       </div>
     </Router>
