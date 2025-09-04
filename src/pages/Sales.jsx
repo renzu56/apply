@@ -37,6 +37,8 @@ export default function Sales() {
                 <p>We want you to be completely satisfied with your purchase.
                If for any reason you’re not happy, simply contact our support team 
                within 60 days of your purchase, and we’ll issue a full refund.
+
+               <strong>For german users we will guarantee a 14-Day Money-Back service!</strong>
 </p>
             </p>
 
