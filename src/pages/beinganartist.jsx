@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
+import DigistoreBadge from "../components/DigistoreBadge";
 // ✅ Digistore24 checkout for the EBOOK (ID 632899)
 const CHECKOUT_URL = "https://www.digistore24.com/product/632899";
 
@@ -67,6 +67,8 @@ export default function BeingAnArtist() {
         </section>
       </main>
 
+      <DigistoreBadge />
+      
       <footer className="legal-footer">
         <div className="legal-buttons">
           <Link className="btn-outline tiny" to="/rechtliches#imprint">

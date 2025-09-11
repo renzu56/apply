@@ -1,8 +1,12 @@
 // src/pages/Sales.jsx
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import DigistoreBadge from "../components/DigistoreBadge";
+
 
 const CHECKOUT_URL = "https://www.digistore24.com/product/629295"; // real checkout link
+
+
 
 export default function Sales() {
   const heroImageSrc = "/unnamed.jpg"; // swap to a proper Slito EX visual when ready
@@ -50,6 +54,8 @@ export default function Sales() {
               </a>
             </div>
 
+            
+
             {/* feature chips */}
             <ul className="chips">
               <li>Automated captions & phrases</li>
@@ -72,6 +78,11 @@ export default function Sales() {
         </section>
       </main>
 
+      <DigistoreBadge />
+
+
+
+
       {/* FOOTER LEGAL LINKS */}
       <footer className="legal-footer">
         <div className="legal-buttons">
@@ -83,6 +94,8 @@ export default function Sales() {
           </Link>
         </div>
       </footer>
+
+      
 
       {/* PAGE CSS */}
       <style>{`
