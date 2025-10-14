@@ -109,8 +109,10 @@ function ContentEN() {
           VAT ID (if applicable): [insert here or state Kleinunternehmerregelung].
         </p>
         <p>
-          Sales & payment are handled via <strong>Digistore24 GmbH</strong>, St.-Godehard-Str. 32, 31139 Hildesheim,
-          Germany.
+          Sales & payment are handled via Digistore24 Inc.
+            360 Central Avenue, Suite 800
+St. Petersburg, FL 33701
+USA.
         </p>
 
         <h3>Liability for content</h3>

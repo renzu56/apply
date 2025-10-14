@@ -43,7 +43,7 @@ export default function BeingAnArtist() {
 
             <div className="cta-row">
               <a className="btn" href={CHECKOUT_URL} target="_blank" rel="noopener">
-                Buy the eBook for 18€
+                Buy the eBook for 25$ 
               </a>
              
             </div>
