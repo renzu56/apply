@@ -222,7 +222,10 @@ function ContentDE() {
           USt-IdNr. (falls vorhanden): [hier eintragen oder angeben, dass Kleinunternehmerregelung gilt].
         </p>
         <p>
-          Verkauf & Zahlungsabwicklung über <strong>Digistore24 GmbH</strong>, St.-Godehard-Str. 32, 31139 Hildesheim,
+          Sales & payment are handled via Digistore24 Inc.
+            360 Central Avenue, Suite 800
+St. Petersburg, FL 33701
+USA.
           Deutschland.
         </p>
 
