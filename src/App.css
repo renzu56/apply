@@ -1,12 +1,15 @@
+/* app.css */
+
+/* keep root as a simple container; DO NOT center text globally */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
   position: relative;
+  text-align: initial;               /* 👈 FIX: was center */
 }
 
-/* Navbar Styles */
+/* Navbar */
 .navbar {
   position: absolute;
   top: 1rem;
@@ -23,7 +26,7 @@
   filter: drop-shadow(0 0 0.5rem #ff0080);
 }
 
-/* ProductCard Styles */
+/* ProductCard */
 .product-card {
   margin-bottom: 2rem;
   padding: 1.5rem;
@@ -62,14 +65,18 @@
   border-radius: 1.5rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
+  /* 👇 THIS WAS THE PROBLEM EARLIER (inline-block makes grids misalign)
+     Leave it out here; we'll force block below for safety. */
+  /* display: inline-block; */
   margin-top: 1rem;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-}.card {
+}
+
+.card {
   background: rgba(255,255,255,0.65);
   border-radius: 18px;
   box-shadow: 0 10px 36px 0 rgba(76,110,255,0.17), 0 3px 12px 0 rgba(30,30,90,0.10);
@@ -81,11 +88,6 @@
   transition: box-shadow 0.21s, background 0.17s;
 }
 
-.card:hover {
-  box-shadow: 0 16px 60px 0 rgba(76,110,255,0.25), 0 4px 16px 0 rgba(30,30,90,0.14);
-  background: rgba(255,255,255,0.78);
-}
-
 .card::before {
   content: "";
   position: absolute;
@@ -95,46 +97,17 @@
   background: linear-gradient(110deg,rgba(255,255,255,0.19) 0%,rgba(255,255,255,0.05) 95%);
   pointer-events: none;
 }
+
+/* Hide product-card on small screens */
 @media (max-width: 900px) {
   .product-card { display: none !important; }
 }
 
-.trust-badges {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 9999;
-}
+/* Trust badges (unchanged) */
+.trust-badges { position: fixed; bottom: 16px; right: 16px; display: flex; flex-direction: column; gap: 12px; z-index: 9999; }
+.badge { width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #ffffff, #a6f1ff); border: 2px solid #24c2ff; box-shadow: 0 4px 12px rgba(0,140,255,0.3); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-weight: 700; font-size: 0.75rem; color: #0b3c59; padding: 6px; cursor: default; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.badge:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 20px rgba(0,140,255,0.4); }
+.badge-icon { font-size: 1.5rem; margin-bottom: 4px; }
 
-.badge {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffffff, #a6f1ff);
-  border: 2px solid #24c2ff;
-  box-shadow: 0 4px 12px rgba(0,140,255,0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-weight: 700;
-  font-size: 0.75rem;
-  color: #0b3c59;
-  padding: 6px;
-  cursor: default;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.badge:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,140,255,0.4);
-}
-
-.badge-icon {
-  font-size: 1.5rem;
-  margin-bottom: 4px;
-}
+/* 👇 SAFETY OVERRIDES — keep grids aligned everywhere */
+.card { display: block; }             /* 👈 FIX: ensure cards are blocks app-wide */

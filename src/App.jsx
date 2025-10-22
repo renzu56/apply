@@ -1,14 +1,15 @@
 // src/App.jsx
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"; // <-- add Navigate
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import ApplyPage from "./pages/ApplyPage";
 import About from "./pages/About.jsx";
-import Sales from "./pages/Sales.jsx"; // ← the page from the canvas
+import Sales from "./pages/Sales.jsx";
 import Rechtliches from "./pages/Rechtliches.jsx";
 import BeingAnArtist from "./pages/beinganartist.jsx";
-import Slitoex from "./pages/beat.jsx"
+import Slitoex from "./pages/beat.jsx";
+import JouleOnboarding from "./pages/JouleOnboarding.jsx";
 
 // Cover image(s) for the overlay card (keep if you like the look)
 const COVER_URLS = [
@@ -97,15 +98,17 @@ function App() {
     <div>
 
         {/* Routes */}
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/apply" element={<ApplyPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/sales" element={<Sales />} /> {/* ← NEW */}
-          <Route path="/rechtliches" element={<Rechtliches />} />
-            <Route path="/being-an-artist" element={<BeingAnArtist />} />
-            <Route path="/beat" element={<Slitoex />} /> {/* ← NEW */}
-        </Routes>
+           <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/apply" element={<ApplyPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sales" element={<Sales />} />
+        <Route path="/rechtliches" element={<Rechtliches />} />
+        <Route path="/being-an-artist" element={<BeingAnArtist />} />
+        <Route path="/beat" element={<Slitoex />} />
+        <Route path="/jouleonboarding" element={<JouleOnboarding />} />
+        <Route path="/Jouleonboarding" element={<Navigate to="/jouleonboarding" replace />} />
+      </Routes>
       </div>
     </Router>
   );
