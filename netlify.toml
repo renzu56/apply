@@ -1,5 +1,3 @@
-# netlify.toml  (im Repo-Root)
-
 [[redirects]]
 from = "/ads.txt"
 to = "/ads.txt"
@@ -12,8 +10,18 @@ to = "/robots.txt"
 status = 200
 force = true
 
-# SPA-Fallback zuletzt
+# SPA-Fallback ganz zuletzt
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
+
+[[headers]]  # für /ads.txt
+for = "/ads.txt"
+[headers.values]
+Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]  # für /robots.txt
+for = "/robots.txt"
+[headers.values]
+Cache-Control = "no-cache, no-store, must-revalidate"
