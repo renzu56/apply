@@ -1,0 +1,19 @@
+# netlify.toml  (im Repo-Root)
+
+[[redirects]]
+from = "/ads.txt"
+to = "/ads.txt"
+status = 200
+force = true
+
+[[redirects]]
+from = "/robots.txt"
+to = "/robots.txt"
+status = 200
+force = true
+
+# SPA-Fallback zuletzt
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
