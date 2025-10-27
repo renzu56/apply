@@ -1,27 +1,4 @@
-[[redirects]]
-from = "/ads.txt"
-to = "/ads.txt"
-status = 200
-force = true
-
-[[redirects]]
-from = "/robots.txt"
-to = "/robots.txt"
-status = 200
-force = true
-
-# SPA-Fallback ganz zuletzt
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-
-[[headers]]  # für /ads.txt
-for = "/ads.txt"
+[[headers]]
+for = "/*"
 [headers.values]
-Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[headers]]  # für /robots.txt
-for = "/robots.txt"
-[headers.values]
-Cache-Control = "no-cache, no-store, must-revalidate"
+Content-Security-Policy = "default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://securepubads.g.doubleclick.net https://www.googletagservices.com https://www.googletagmanager.com; connect-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.de; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com;"
