@@ -1,0 +1,8 @@
+/*
+  Content-Security-Policy: default-src 'self' data: blob:;
+  Content-Security-Policy: script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://securepubads.g.doubleclick.net https://www.googletagservices.com;
+  Content-Security-Policy: connect-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.de;
+  Content-Security-Policy: img-src 'self' data: https:;
+  Content-Security-Policy: style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  Content-Security-Policy: font-src 'self' https://fonts.gstatic.com data:;
+  Content-Security-Policy: frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com;
