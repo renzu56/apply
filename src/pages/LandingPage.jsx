@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import DigistoreBadge from "../components/DigistoreBadge";
-import AdBanner from "../components/Adbanner.jsx"; // <-- korrigierter Import
+
 
 // ✅ Digistore24 settings
 const PRODUCT_ID = "632899";
@@ -26,8 +26,7 @@ export default function AffiliateSupport() {
 
             <p className="subtitle">Earn 80% commission on a $25 PDF — ~ $20 per sale.</p>
 
-            {/* 🔥 Sichtbarer Anzeigenblock direkt im Hero */}
-            <AdBanner slot="3002745504" />
+         
 
             <p className="lede">
               <strong>BEING AN ARTIST IS EASIER THAN EVER</strong> is a practical guide for modern
