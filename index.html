@@ -2,54 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="google-adsense-account" content="ca-pub-5684569576031799">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> DZ RenZu </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DZ RenZu</title>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
 
-    <!-- CMP vor Ezoic -->
+    <!-- (Optional) falls du parallel noch AdSense nutzt.
+         Tipp: Für Ezoic MCM später Auto-Ads deaktivieren. -->
+    <meta name="google-adsense-account" content="ca-pub-5684569576031799" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5684569576031799" crossorigin="anonymous"></script>
+
+    <!-- CMP MUSS vor Ezoic geladen werden -->
     <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
     <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
 
-    <!-- Ezoic Header -->
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>window.ezstandalone = window.ezstandalone || { cmd: [] };</script>
-
-    <!-- dein bisheriges AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5684569576031799" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <!-- Wrapper darf gestylt werden -->
-<div class="ad-wrap">
-  <!-- Wichtig: das innere DIV NICHT stylen -->
-  <div id="ezoic-pub-ad-placeholder-101"></div>
-</div>
-
-<script>
-  window.ezstandalone = window.ezstandalone || { cmd: [] };
-  window.ezstandalone.cmd.push(function () {
-    ezstandalone.showAds(101);   // mind. 1 ID aufrufen
-  });
-</script>
-
-<style>
-  /* Nur den Wrapper stylen, NIEMALS das id="ezoic-pub-ad-placeholder-101" */
-  .ad-wrap { min-height: 250px; margin: 16px 0; }
-</style>
-
-    <!-- TEMP: 1 Test-Placement, damit sicher ein Request rausgeht -->
-    <div style="max-width:1000px;margin:16px auto">
-      <div id="ezoic-pub-ad-placeholder-YOUR_PLACEMENT_ID"></div>
-    </div>
+    <!-- Ezoic Header (im <head>, so weit oben wie möglich) -->
+    <script async src="https://www.ezojs.com/ezoic/sa.min.js"></script>
     <script>
-      // Ersetze YOUR_PLACEMENT_ID durch die echte ID aus dem Ezoic-Dashboard
       window.ezstandalone = window.ezstandalone || { cmd: [] };
-      ezstandalone.cmd.push(function () {
-        ezstandalone.showAds(YOUR_PLACEMENT_ID);
-      });
     </script>
 
+    <style>
+      /* Nur den WRAPPER stylen, nie das Placeholder-DIV selbst */
+      .ad-wrap { min-height: 250px; margin: 16px auto; max-width: 1000px; }
+      /* Hilfsstil, optional: damit der Slot nicht „springt“ */
+      .ad-wrap::before { content: ""; display: block; height: 1px; }
+    </style>
+  </head>
+  <body>
+    <!-- ======= Ezoic Placement über dem React-Root ======= -->
+    <div class="ad-wrap">
+      <!-- WICHTIG: Dieses innere DIV NICHT stylen -->
+      <div id="ezoic-pub-ad-placeholder-101"></div>
+    </div>
+
+    <!-- Ads auslösen, sobald DOM steht (SPA-freundlich, kleiner Delay) -->
+    <script>
+      (function fireEzoicAds() {
+        function show() {
+          window.ezstandalone = window.ezstandalone || { cmd: [] };
+          window.ezstandalone.cmd.push(function () {
+            // kleiner Delay, damit Content & CMP sicher bereit sind
+            setTimeout(function () {
+              try { window.ezstandalone.showAds(101); } catch (e) {}
+            }, 300);
+          });
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", show, { once: true });
+        } else {
+          show();
+        }
+      })();
+    </script>
+    <!-- ================================================ -->
+
+    <!-- Dein React App-Root -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Debug-Tipp: Aufrufen mit ?ez_js_debugger=1 -->
   </body>
 </html>
