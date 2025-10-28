@@ -150,6 +150,9 @@ USA.
 
       <section id="datenschutz">
         <h2>Privacy Policy</h2>
+
+        <span id="ezoic-privacy-policy-embed"></span>
+        
         <h3>1. Controller</h3>
         <p>
           Lennard Feist, Renettenstraße 27, 60435 Frankfurt am Main, Germany.<br />

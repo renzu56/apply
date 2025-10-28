@@ -14,42 +14,41 @@
   <script async src="https://www.ezojs.com/ezoic/sa.min.js"></script>
   <script>window.ezstandalone = window.ezstandalone || { cmd: [] };</script>
 
-  <!-- (Optional) dein bestehendes AdSense -->
+  <!-- (Optional) falls du parallel noch AdSense nutzt -->
   <meta name="google-adsense-account" content="ca-pub-5684569576031799" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5684569576031799" crossorigin="anonymous"></script>
 
   <style>
-    /* nur Wrapper stylen, niemals das innere Placeholder-DIV */
-    .ad-wrap{min-height:250px; margin:16px auto; max-width:1000px;}
+    /* Nur den Wrapper stylen, niemals das innere Placeholder-DIV */
+    .ad-wrap { min-height: 250px; margin: 16px auto; max-width: 1000px; }
   </style>
 </head>
 <body>
 
-  <!-- === Ezoic-Placeholders (IDs aus deinem Dashboard) === -->
-  <div class="ad-wrap"><div id="ezoic-pub-ad-placeholder-101"></div></div>
-  <div class="ad-wrap"><div id="ezoic-pub-ad-placeholder-102"></div></div>
-  <div class="ad-wrap"><div id="ezoic-pub-ad-placeholder-103"></div></div>
-  <div class="ad-wrap"><div id="ezoic-pub-ad-placeholder-104"></div></div>
-  <div class="ad-wrap"><div id="ezoic-pub-ad-placeholder-105"></div></div>
+  <!-- EIN Ezoic-Placeholder -->
+  <div class="ad-wrap">
+    <!-- WICHTIG: dieses innere DIV nicht stylen -->
+    <div id="ezoic-pub-ad-placeholder-101"></div>
+  </div>
 
-  <!-- Ads anfordern (ein Call für alle IDs) -->
+  <!-- Ads anfordern (nur ID 101) -->
   <script>
-    (function fireEzoic(){
-      function show(){
+    (function () {
+      function show() {
         window.ezstandalone = window.ezstandalone || { cmd: [] };
-        ezstandalone.cmd.push(function(){
-          setTimeout(function(){
-            try { ezstandalone.showAds(101,102,103,104,105); } catch(e){}
-          }, 300);
+        ezstandalone.cmd.push(function () {
+          try { ezstandalone.showAds(101); } catch (e) {}
         });
       }
       if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", show, {once:true});
-      } else { show(); }
+        document.addEventListener("DOMContentLoaded", show, { once: true });
+      } else {
+        show();
+      }
     })();
   </script>
 
-  <!-- dein App-Root -->
+  <!-- Dein App-Root -->
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
