@@ -3,13 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="google-adsense-account" content="ca-pub-5684569576031799">
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> DZ RenZu </title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5684569576031799"
-     crossorigin="anonymous"></script>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- CMP vor Ezoic -->
+    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
+    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
+
+    <!-- Ezoic Header -->
+    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+    <script>window.ezstandalone = window.ezstandalone || { cmd: [] };</script>
+
+    <!-- dein bisheriges AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5684569576031799" crossorigin="anonymous"></script>
   </head>
   <body>
+    <!-- TEMP: 1 Test-Placement, damit sicher ein Request rausgeht -->
+    <div style="max-width:1000px;margin:16px auto">
+      <div id="ezoic-pub-ad-placeholder-YOUR_PLACEMENT_ID"></div>
+    </div>
+    <script>
+      // Ersetze YOUR_PLACEMENT_ID durch die echte ID aus dem Ezoic-Dashboard
+      window.ezstandalone = window.ezstandalone || { cmd: [] };
+      ezstandalone.cmd.push(function () {
+        ezstandalone.showAds(YOUR_PLACEMENT_ID);
+      });
+    </script>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
