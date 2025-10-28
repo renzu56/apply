@@ -19,6 +19,24 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5684569576031799" crossorigin="anonymous"></script>
   </head>
   <body>
+    <!-- Wrapper darf gestylt werden -->
+<div class="ad-wrap">
+  <!-- Wichtig: das innere DIV NICHT stylen -->
+  <div id="ezoic-pub-ad-placeholder-101"></div>
+</div>
+
+<script>
+  window.ezstandalone = window.ezstandalone || { cmd: [] };
+  window.ezstandalone.cmd.push(function () {
+    ezstandalone.showAds(101);   // mind. 1 ID aufrufen
+  });
+</script>
+
+<style>
+  /* Nur den Wrapper stylen, NIEMALS das id="ezoic-pub-ad-placeholder-101" */
+  .ad-wrap { min-height: 250px; margin: 16px 0; }
+</style>
+
     <!-- TEMP: 1 Test-Placement, damit sicher ein Request rausgeht -->
     <div style="max-width:1000px;margin:16px auto">
       <div id="ezoic-pub-ad-placeholder-YOUR_PLACEMENT_ID"></div>
