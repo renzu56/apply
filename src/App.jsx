@@ -1,6 +1,11 @@
-// src/App.jsx
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"; // <-- add Navigate
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import ApplyPage from "./pages/ApplyPage";
@@ -11,12 +16,11 @@ import BeingAnArtist from "./pages/beinganartist.jsx";
 import Slitoex from "./pages/beat.jsx";
 import JouleOnboarding from "./pages/JouleOnboarding.jsx";
 
-// Cover image(s) for the overlay card (keep if you like the look)
+// you can remove these if you don't use them anywhere
 const COVER_URLS = [
-  "https://public-files.gumroad.com/v3sv7shg4ylkw7d25593t94su50o"
+  "https://public-files.gumroad.com/v3sv7shg4ylkw7d25593t94su50o",
 ];
 
-// ✅ Use your real Digistore checkout link
 const DIGISTORE_URL = "https://www.digistore24.com/product/629295";
 
 function App() {
@@ -28,7 +32,8 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // --- styles from your version (unchanged except minor tidy) ---
+  // You can delete these styles if they are truly unused;
+  // kept here just so nothing breaks if LandingPage still references them.
   const productBoxStyle = isMobile
     ? {
         position: "relative",
@@ -95,20 +100,23 @@ function App() {
     <Router>
       <Navbar />
 
-    <div>
+      <div>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/apply" element={<ApplyPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/rechtliches" element={<Rechtliches />} />
+          <Route path="/being-an-artist" element={<BeingAnArtist />} />
+          <Route path="/beat" element={<Slitoex />} />
+          <Route path="/jouleonboarding" element={<JouleOnboarding />} />
 
-        {/* Routes */}
-           <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/apply" element={<ApplyPage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/sales" element={<Sales />} />
-        <Route path="/rechtliches" element={<Rechtliches />} />
-        <Route path="/being-an-artist" element={<BeingAnArtist />} />
-        <Route path="/beat" element={<Slitoex />} />
-        <Route path="/jouleonboarding" element={<JouleOnboarding />} />
-        <Route path="/Jouleonboarding" element={<Navigate to="/jouleonboarding" replace />} />
-      </Routes>
+          {/* Redirect old capitalised path if you had it */}
+          <Route
+            path="/Jouleonboarding"
+            element={<Navigate to="/jouleonboarding" replace />}
+          />
+        </Routes>
       </div>
     </Router>
   );
