@@ -53,13 +53,13 @@ function AffiliateSupport() {
                 <div className="hero-orbit">
                   <div className="hero-orbit-core">DZ Renzu</div>
                   <div className="hero-orbit-pill hero-orbit-pill--studio">
-                    Studio · builds
+                    Software & Web
                   </div>
                   <div className="hero-orbit-pill hero-orbit-pill--network">
-                    Network · jobs
+                    Network & Forums
                   </div>
                   <div className="hero-orbit-pill hero-orbit-pill--lab">
-                    Lab · tokens
+                    Aesthetic + Innovation
                   </div>
                 </div>
                 <div className="hero-badges">
