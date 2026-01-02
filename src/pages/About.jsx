@@ -2,36 +2,39 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function About() {
-  const heroImageSrc = "/lennard.jpg"; // public/lennard.jpg
+  const heroImageSrc = "/dzrenzu.jpg"; // public/dzrenzu.jpg, change if needed
 
   const experiences = useMemo(
     () => [
       {
-        title: "Founder · DZ RenZu & Laesterie",
-        img: "/unnamed.jpg",
+        title: "DZ Renzu, Web Presence for Brands and Businesses",
+        img: "/image.png",
         desc:
-          "Companies I built entirely on my own. The goal is to help musicians and brands and bring them to a utopian level.",
+          "High-performance websites designed to convert, built for brands, shops, restaurants, and service providers.",
       },
       {
-        title: "Social Media Manager & Creator for Blanko ",
+        title: "Shop and Product Experiences",
         img: "/blanko.png",
-        desc: "Managed and created Content for the first drop of Blankogalerie.",
+        desc:
+          "E-commerce builds and optimizations, fast pages, clean UX, conversion-focused flows from landing to checkout.",
       },
       {
-        title: "Software Engineer + Creativity",
+        title: "Custom Web Apps and Software",
         img: "/frufru.png",
         desc:
-          "Coding is blank, Creativity needs to be digitalized. I connect both with my own founded methods to make brands appear online, like no other.",
+          "Tailored web apps and integrations that simplify operations, dashboards, automations, booking systems, and more.",
       },
       {
-        title: "Producer (Social Media Creator) for ARMADA MUSIC",
+        title: "Campaign Drops and Interactive Builds",
         img: "/armada.jpg",
-        desc: "Tiktok Remixes for ARMADA MUSIC and the song Enthusiasme by HABITAT",
+        desc:
+          "Limited-time launches with gamified mechanics, sponsor tie-ins, galleries, interactive experiences.",
       },
       {
-        title: "Freelancer on Fiverr",
-        img: "/five.png",
-        desc: "Freelancer for Social Media, Coding and Music Production",
+        title: "UGC and Creator Connections",
+        noImg: true,
+        desc:
+          "Connecting brands with creators for authentic UGC, content pipelines, coordination, scalable delivery.",
       },
     ],
     []
@@ -46,14 +49,17 @@ export default function About() {
         <section className="hero container">
           <div className="hero-left">
             <h1 className="title">
-              <span className="label">ABOUT ME:</span>
-              <span className="name">LENNARD "RENZU" FEIST</span>
+              <span className="label">ABOUT:</span>
+              <span className="name">DZ RENZU</span>
             </h1>
-            <p className="subtitle">Founder of DZ RenZu</p>
+            <p className="subtitle">
+              Digital studio for websites, web apps, online presence, built to deliver measurable results.
+            </p>
           </div>
-        <div className="hero-right">
+
+          <div className="hero-right">
             <div className="hero-image-wrap">
-              <img src={heroImageSrc} alt="Lennard portrait" />
+              <img src={heroImageSrc} alt="DZ Renzu studio visual" />
               <div className="img-glow" />
             </div>
           </div>
@@ -62,58 +68,80 @@ export default function About() {
         {/* EXPERIENCES SLIDER */}
         <section className="container experiences">
           <header className="section-head">
-            <h2>Experience</h2>
+            <h2>Selected Work, Experience</h2>
             <p className="muted">Swipe to explore</p>
           </header>
           <CubeCarousel items={experiences} />
         </section>
 
-        {/* SERVICES (your copy kept) */}
+        {/* SERVICES */}
         <section className="container what-i-do">
           <header className="section-head">
             <h2>Services</h2>
           </header>
+
           <div className="tri-grid">
             <div className="card editable" suppressContentEditableWarning>
               <h3>Special Drop Development 🎁</h3>
               <p>
-                Limited-time sites/software with gamified mechanics (e.g., Arcade Box to
-                win pre-order codes), sponsor tie-ins, Galleries or exclusive Items (Stickers, Music-Playlists, NFTs)
+                Limited-time sites, software with gamified mechanics (e.g., Arcade Box to win pre-order codes),
+                sponsor tie-ins, galleries, exclusive items (stickers, music playlists, NFTs).
               </p>
             </div>
+
             <div className="card editable" suppressContentEditableWarning>
-              <h3>Portfolio Building for Your Brand 💼 </h3>
+              <h3>Portfolio Building for Your Brand 💼</h3>
               <p>
-                Make your Brand structured, outstanding and lucrative for Sponsors
-                etc./ Make your Brand structured and eye-catching for customers.
+                Make your brand structured, outstanding, lucrative for sponsors, and eye-catching for customers.
               </p>
             </div>
+
             <div className="card editable" suppressContentEditableWarning>
-              <h3>Social Media Management & Creation 👨‍💼</h3>
+              <h3>Social Media Management and Creation 👨‍💼</h3>
               <p>
-                Exclusive Content Creation/Posting on all plattforms, aswell as
-                Managing for a perfect Algorithm-Catch
+                Content creation, posting across platforms, ongoing management, consistent growth, algorithm-fit.
               </p>
             </div>
+
             <div className="card editable" suppressContentEditableWarning>
               <h3>AI for Your Brand ֎</h3>
               <p>
-                Chat assistants, content copilots, and ops automations wired into
-                your tools—practical AI that ships and drives results.
+                Chat assistants, content copilots, ops automations wired into your tools, practical AI that ships and drives results.
               </p>
             </div>
+
             <div className="card editable" suppressContentEditableWarning>
-              <h3>Designification of Store & Brand 🎨 </h3>
+              <h3>Designification of Store and Brand 🎨</h3>
               <p>
-                Typography, color tokens, and UX/UI polish for product, checkout,
-                and navigation—micro-interactions that feel premium and boost trust.
+                Typography, color tokens, UX/UI polish for product, checkout, navigation, micro-interactions that feel premium and boost trust.
               </p>
             </div>
+
             <div className="card editable" suppressContentEditableWarning>
               <h3>Cult Manager 🌎</h3>
               <p>
-                Build a complete Guide, Structure and World of your Brand to
-                create a real community.
+                Build the world of your brand, guidelines, structure, community systems that turn customers into fans.
+              </p>
+            </div>
+
+            <div className="card editable" suppressContentEditableWarning>
+              <h3>Web and App Development 🌐📱</h3>
+              <p>
+                Modern websites, web apps, mobile-ready experiences, fast, responsive, built with scalable architecture.
+              </p>
+            </div>
+
+            <div className="card editable" suppressContentEditableWarning>
+              <h3>Personalized Customer Experience ✨</h3>
+              <p>
+                Personalized flows, funnels, on-site experiences, segmentation, smart content, UX built around your customers.
+              </p>
+            </div>
+
+            <div className="card editable" suppressContentEditableWarning>
+              <h3>UGC Network and Creator Connections 🎥</h3>
+              <p>
+                Access to a creator network for UGC, matching, coordination, content direction, delivery pipelines for brands.
               </p>
             </div>
           </div>
@@ -136,7 +164,6 @@ export default function About() {
           background:linear-gradient(140deg,var(--bg-start) 0%,var(--bg-mid) 50%,var(--bg-end) 100%);
           overflow-x:hidden;
         }
-        /* remove the blue "smoke" halo */
         body::after{ content:none; }
 
         .page{ position:relative; z-index:2; padding:28px 16px 72px }
@@ -189,40 +216,34 @@ export default function About() {
           .tri-grid{ grid-template-columns:1fr; gap:14px }
           .card{ padding:14px; border-radius:16px }
         }
-          /* --- PHONE FIXES --- */
-@media (max-width: 900px), (pointer: coarse) {
-  /* hide arrows on phones/touch */
-  .controls { display: none !important; }
 
-  /* tighten container so nothing bleeds */
-  .container { padding: 16px 12px !important; border-radius: 18px !important; }
+        /* PHONE FIXES */
+        @media (max-width: 900px), (pointer: coarse) {
+          .controls { display: none !important; }
+          .container { padding: 16px 12px !important; border-radius: 18px !important; }
+          .experiences .viewport { padding: 4px 0 !important; }
+          .experiences .track {
+            --card: min(64vw, 300px) !important;
+            --gap: 8px !important;
+          }
+          .experiences .cube-card {
+            border-radius: 14px !important;
+            box-shadow: 0 6px 20px #00000012 !important;
+            transform: none !important;
+            opacity: 1 !important;
+            filter: none !important;
+          }
+          .experiences .cube-card.left,
+          .experiences .cube-card.right {
+            transform: scale(.98) !important;
+            opacity: .92 !important;
+          }
+          .experiences .cube-card .img-wrap { height: min(36vw, 180px) !important; }
+          .experiences .cube-card h3 { font-size: .92rem !important; }
+          .experiences .cube-card p  { font-size: .86rem !important; }
+        }
 
-  /* experience carousel: slimmer cards that fit the container */
-  .experiences .viewport { padding: 4px 0 !important; }
-  .experiences .track {
-    --card: min(64vw, 300px) !important;  /* smaller width per card */
-    --gap: 8px !important;
-  }
-  .experiences .cube-card {
-    border-radius: 14px !important;
-    box-shadow: 0 6px 20px #00000012 !important;
-    transform: none !important;       /* remove big 3D tilt on phone */
-    opacity: 1 !important;
-    filter: none !important;
-  }
-  .experiences .cube-card.left,
-  .experiences .cube-card.right {
-    transform: scale(.98) !important;
-    opacity: .92 !important;
-  }
-  .experiences .cube-card .img-wrap { height: min(36vw, 180px) !important; }
-  .experiences .cube-card h3 { font-size: .92rem !important; }
-  .experiences .cube-card p  { font-size: .86rem !important; }
-}
-
-/* if the blue smoke is still there on your build, force-remove it */
-body::after { content: none !important; }
-
+        body::after { content: none !important; }
       `}</style>
     </>
   );
@@ -242,18 +263,26 @@ function CubeCarousel({ items }) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (!wrapRef.current) return;
     let startX = 0;
     let down = false;
-    const onDown = (e) => { down = true; startX = e.touches ? e.touches[0].clientX : e.clientX; };
+
+    const onDown = (e) => {
+      down = true;
+      startX = e.touches ? e.touches[0].clientX : e.clientX;
+    };
     const onMove = (e) => {
       if (!down) return;
       const x = e.touches ? e.touches[0].clientX : e.clientX;
       const dx = x - startX;
-      if (Math.abs(dx) > 48) { dx < 0 ? next() : prev(); down = false; }
+      if (Math.abs(dx) > 48) {
+        dx < 0 ? next() : prev();
+        down = false;
+      }
     };
     const onUp = () => (down = false);
 
@@ -265,6 +294,7 @@ function CubeCarousel({ items }) {
     el.addEventListener("touchstart", onDown, { passive: true });
     el.addEventListener("touchmove", onMove, { passive: true });
     el.addEventListener("touchend", onUp);
+
     return () => {
       el.removeEventListener("mousedown", onDown);
       el.removeEventListener("mousemove", onMove);
@@ -274,6 +304,7 @@ function CubeCarousel({ items }) {
       el.removeEventListener("touchmove", onMove);
       el.removeEventListener("touchend", onUp);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   const next = () => setIndex((i) => clamp(i + 1));
@@ -286,26 +317,42 @@ function CubeCarousel({ items }) {
   return (
     <div className="carousel-root">
       <div className="controls">
-        <button className="nav" aria-label="Previous" onClick={prev}><ArrowLeft /></button>
-        <button className="nav" aria-label="Next" onClick={next}><ArrowRight /></button>
+        <button className="nav" aria-label="Previous" onClick={prev}>
+          <ArrowLeft />
+        </button>
+        <button className="nav" aria-label="Next" onClick={next}>
+          <ArrowRight />
+        </button>
       </div>
 
       <div className="viewport" ref={wrapRef}>
         <ul className="track" style={{ ["--i"]: index }}>
           {items.map((it, i) => {
-            const offset = ((i - index + items.length) % items.length);
+            const offset = (i - index + items.length) % items.length;
             const isCenter = i === index;
             const isLeft = offset === items.length - 1;
             const isRight = offset === 1;
+
+            const showImg = !!it.img && !it.noImg;
+
             return (
               <li
                 key={i}
                 className={
-                  "cube-card" + (isCenter ? " center" : "") + (isLeft ? " left" : "") + (isRight ? " right" : "")
+                  "cube-card" +
+                  (isCenter ? " center" : "") +
+                  (isLeft ? " left" : "") +
+                  (isRight ? " right" : "") +
+                  (!showImg ? " no-img" : "")
                 }
                 onClick={() => setIndex(i)}
               >
-                <div className="img-wrap"><img src={it.img} alt="" /></div>
+                {showImg && (
+                  <div className="img-wrap">
+                    <img src={it.img} alt={it.title} />
+                  </div>
+                )}
+
                 <div className="info">
                   <h3>{it.title}</h3>
                   <p>{it.desc}</p>
@@ -340,26 +387,40 @@ function CubeCarousel({ items }) {
           box-shadow:0 10px 44px #beeaff2c, 0 2px 24px #b0e4ff20; cursor:pointer; transform-style:preserve-3d; position:relative;
           transition: transform .55s cubic-bezier(.32,0,.22,1), box-shadow .4s, filter .35s, opacity .35s;
           opacity:.66; filter:grayscale(.12) brightness(.96); transform:perspective(1200px) translateZ(-60px) rotateY(-8deg);
+          display:flex; flex-direction:column;
         }
         .cube-card.right{ transform:perspective(1200px) translateZ(-60px) rotateY(8deg) }
         .cube-card.center{
           opacity:1; filter:none; transform:perspective(1200px) translateZ(0) rotateY(0) scale(1.04); box-shadow:0 16px 60px #55cdfd55;
         }
+
         .cube-card .img-wrap{ height:180px; overflow:hidden; position:relative }
         .cube-card img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.03) }
         .cube-card .info{ padding:14px 14px 18px }
         .cube-card h3{ margin:2px 0 8px 0; font-size:1.05rem; color:#1596c5 }
         .cube-card p{ margin:0; color:#33566e }
 
-        /* Phone: smaller cards, taller images, fit container */
+        /* Text-only cards */
+        .cube-card.no-img{ justify-content:center; }
+        .cube-card.no-img .info{ padding:22px 16px 22px; }
+        .cube-card.no-img h3{ font-size:1.12rem; }
+        .cube-card.no-img p{ margin-top:10px; }
+
         @media (max-width:900px){
           .viewport{ padding:6px 0 44px; }
           .track{ --card: 72vw; --gap: 10px; }
-          .cube-card{ border-radius:16px; box-shadow:0 8px 28px #55cdfd33; opacity:.92; filter:none; transform:perspective(1000px) translateZ(0) rotateY(0); }
-          .cube-card.left, .cube-card.right{ transform:perspective(1000px) translateZ(-8px) rotateY(0) scale(.98); opacity:.88; }
+          .cube-card{
+            border-radius:16px; box-shadow:0 8px 28px #55cdfd33;
+            opacity:.92; filter:none; transform:perspective(1000px) translateZ(0) rotateY(0);
+          }
+          .cube-card.left, .cube-card.right{
+            transform:perspective(1000px) translateZ(-8px) rotateY(0) scale(.98); opacity:.88;
+          }
           .cube-card .img-wrap{ height: min(42vw, 220px); }
           .cube-card h3{ font-size:.95rem; }
           .cube-card p{ font-size:.9rem; }
+
+          .cube-card.no-img .info{ padding:18px 14px 18px; }
         }
         @media (max-width:420px){
           .track{ --card: 86vw; --gap: 10px; }
@@ -372,21 +433,20 @@ function CubeCarousel({ items }) {
   );
 }
 
-/* ========= Background FX (lighter/softer, no blue smoke) ========= */
+/* ========= Background FX ========= */
 function AeroBackground() {
   const containerRef = useRef(null);
+
   useEffect(() => {
     const root = containerRef.current;
     if (!root) return;
 
     const prefersReduced =
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || false;
-    const isMobile =
-      window.matchMedia?.('(max-width: 900px)').matches || false;
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || false;
+    const isMobile = window.matchMedia?.("(max-width: 900px)").matches || false;
 
-    // Tweak counts; set to 0 for no FX on phones if you want
-    const cubeCount = prefersReduced ? 0 : (isMobile ? 2 : 6);
-    const bokehCount = prefersReduced ? 0 : (isMobile ? 2 : 6);
+    const cubeCount = prefersReduced ? 0 : isMobile ? 2 : 6;
+    const bokehCount = prefersReduced ? 0 : isMobile ? 2 : 6;
 
     const make = (cls, count) => {
       for (let i = 0; i < count; i++) {
@@ -394,20 +454,23 @@ function AeroBackground() {
         el.className =
           cls + (Math.random() > 0.66 ? " teal" : Math.random() > 0.5 ? " green" : "");
         const base = cls.includes("bokeh") ? 90 + Math.random() * 140 : 36 + Math.random() * 90;
-        const size = isMobile ? base * 0.55 : base; // smaller on phones
+        const size = isMobile ? base * 0.55 : base;
         el.style.width = size + "px";
         el.style.height = size + (cls.includes("cube") ? 0.6 * size : size) + "px";
         el.style.left = Math.round(Math.random() * 100) + "vw";
         el.style.top = Math.round(Math.random() * 100) + "vh";
         el.style.animationDelay = (Math.random() * 4).toFixed(2) + "s";
-        el.style.opacity = (0.14 + Math.random() * 0.28).toFixed(2); // softer
+        el.style.opacity = (0.14 + Math.random() * 0.28).toFixed(2);
         root.appendChild(el);
       }
     };
+
     make("fx-cube", cubeCount);
     make("fx-bokeh", bokehCount);
 
-    return () => { while (root.firstChild) root.removeChild(root.firstChild); };
+    return () => {
+      while (root.firstChild) root.removeChild(root.firstChild);
+    };
   }, []);
 
   return (
@@ -417,8 +480,11 @@ function AeroBackground() {
 
       <style>{`
         #fx-bg-cubes{ position:fixed; inset:0; width:100vw; height:100vh; z-index:0; pointer-events:none; overflow:hidden }
-        /* softer overlay (no heavy smoke; body::after disabled) */
-        #fx-glass-overlay{ position:fixed; inset:0; pointer-events:none; background:linear-gradient(135deg,#eefcffef 0%,#d9f3ff55 60%,#a7f3ff22 100%); mix-blend-mode:lighten; opacity:.08; z-index:1 }
+        #fx-glass-overlay{
+          position:fixed; inset:0; pointer-events:none;
+          background:linear-gradient(135deg,#eefcffef 0%,#d9f3ff55 60%,#a7f3ff22 100%);
+          mix-blend-mode:lighten; opacity:.08; z-index:1
+        }
 
         .fx-cube{
           position:absolute; border-radius:20px; box-shadow:0 8px 42px #85e4ff55, 0 0 18px #fff6;
@@ -430,7 +496,10 @@ function AeroBackground() {
         }
         .fx-cube.green{ background:linear-gradient(133deg,#cfffc2 10%,#51ffb8 80%) }
         .fx-cube.teal{ background:linear-gradient(140deg,#beffe9 40%,#25fff8 100%) }
-        @keyframes floatCube{ 0%{transform:translateY(0) rotate3d(1,1,0,16deg) scale(1)} 100%{transform:translateY(-44px) rotate3d(1,1,0,30deg) scale(1.12)} }
+        @keyframes floatCube{
+          0%{transform:translateY(0) rotate3d(1,1,0,16deg) scale(1)}
+          100%{transform:translateY(-44px) rotate3d(1,1,0,30deg) scale(1.12)}
+        }
 
         .fx-bokeh{
           position:absolute; border-radius:50%;
@@ -438,12 +507,25 @@ function AeroBackground() {
           filter:blur(3px) brightness(1.08); opacity:.26;
           animation:fadeInFloat 1.6s cubic-bezier(.32,0,.22,1), floatBubble 11s infinite alternate cubic-bezier(.32,0,.22,1);
         }
-        .fx-bokeh.green{ background:radial-gradient(circle at 45% 40%, #fff6 60%, #76ff7e 120%); opacity:.28 }
-        .fx-bokeh.teal{ background:radial-gradient(circle at 42% 35%, #fff6 60%, #45fff2 120%); opacity:.28 }
-        @keyframes floatBubble{ 0%{transform:translateY(0) scale(1)} 100%{transform:translateY(-40px) scale(1.1)} }
-        @keyframes fadeInFloat{ 0%{opacity:0} 18%{opacity:1} 100%{opacity:1} }
+        .fx-bokeh.green{
+          background:radial-gradient(circle at 45% 40%, #fff6 60%, #76ff7e 120%);
+          opacity:.28
+        }
+        .fx-bokeh.teal{
+          background:radial-gradient(circle at 42% 35%, #fff6 60%, #45fff2 120%);
+          opacity:.28
+        }
+        @keyframes floatBubble{
+          0%{transform:translateY(0) scale(1)}
+          100%{transform:translateY(-40px) scale(1.1)}
+        }
+        @keyframes fadeInFloat{
+          0%{opacity:0}
+          18%{opacity:1}
+          100%{opacity:1}
+        }
 
-        @media (max-width:900px){ #fx-glass-overlay{ opacity:.05 } } /* even softer on phones */
+        @media (max-width:900px){ #fx-glass-overlay{ opacity:.05 } }
         @media (prefers-reduced-motion: reduce){ .fx-cube,.fx-bokeh{ animation:none !important } }
       `}</style>
     </>
@@ -457,6 +539,7 @@ function ArrowLeft() {
     </svg>
   );
 }
+
 function ArrowRight() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
