@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+// ✅ CHANGE THIS IMPORT PATH to YOUR existing supabase client file.
+// Example paths people use:
+//   import { supabase } from "../lib/supabaseClient";
+//   import { supabase } from "../supabaseClient";
+import { supabase } from "../supabaseClient";
+
 function AffiliateSupport() {
   return (
     <>
@@ -14,104 +20,105 @@ function AffiliateSupport() {
           <div className="shell">
             <Reveal variant="left" className="hero-layout">
               <div className="hero-copy">
-                <p className="eyebrow">DZ RENZU · DIGITAL SYSTEMS STUDIO</p>
-                <h1 className="hero-title">
-                  Infrastructure for creative business.
-                </h1>
+                <p className="eyebrow">DZ RENZU · EVENT & LOYALTY SYSTEMS FOR SHOPS</p>
+                <h1 className="hero-title">Event pages & loyalty mini-apps for local businesses.</h1>
                 <p className="hero-lede">
-                  DZ Renzu builds products, networks and data rails for brands,
-                  creators and companies. Less chaos, more structure.
+                  We build event-based online experiences and task/reward loyalty flows for
+                  fashion stores, restaurants, cafés, and spas — designed to drive visits,
+                  redemptions, and repeat customers.
                 </p>
 
                 <div className="hero-goals">
                   <div>
-                    <p className="hero-goal-label">Core idea</p>
+                    <p className="hero-goal-label">What it does</p>
                     <p className="hero-goal">
-                      Turn loose ideas into one connected system for people,
-                      content and money.
+                      Turn campaigns into a simple mobile flow: promote → participate → redeem →
+                      return.
                     </p>
                   </div>
                   <div className="hero-pill-row">
-                    <span>Studio</span>
-                    <span>Network</span>
-                    <span>Lab</span>
+                    <span>Events</span>
+                    <span>Loyalty</span>
+                    <span>Rewards</span>
                   </div>
                 </div>
 
                 <div className="hero-cta-row">
                   <a href="#services" className="btn">
-                    View services
+                    See solutions
                   </a>
                   <a href="#contact" className="btn-outline">
-                    Contact DZ Renzu
+                    Contact us
                   </a>
                 </div>
               </div>
 
-              {/* visual side instead of snapshot card */}
+              {/* visual side */}
               <div className="hero-visual">
                 <div className="hero-orbit">
-                  <div className="hero-orbit-core">DZ Renzu</div>
+                  <div className="hero-orbit-core">Shop Flow</div>
                   <div className="hero-orbit-pill hero-orbit-pill--studio">
-                    Software & Web
+                    Event Landing
                   </div>
                   <div className="hero-orbit-pill hero-orbit-pill--network">
-                    Network & Forums
+                    Tasks & Streaks
                   </div>
                   <div className="hero-orbit-pill hero-orbit-pill--lab">
-                    Aesthetic + Innovation
+                    Rewards & Codes
                   </div>
                 </div>
                 <div className="hero-badges">
-                  
+                  <span className="hero-badge">QR / Code Redeem</span>
+                  <span className="hero-badge">Mobile first</span>
+                  <span className="hero-badge">Fast launch</span>
                 </div>
               </div>
             </Reveal>
           </div>
         </section>
 
-        {/* THREE PILLARS */}
+        {/* THREE PILLARS -> SOLUTIONS */}
         <section id="pillars" className="section">
           <div className="shell">
             <Reveal variant="up" className="section-header">
-              <p className="eyebrow">THREE PILLARS</p>
-              <h2 className="section-title">How DZ Renzu is split</h2>
+              <p className="eyebrow">CORE SYSTEM</p>
+              <h2 className="section-title">Three parts that always work</h2>
               <p className="section-intro">
-                One brand with three clear roles. Studio builds. Network connects. Lab
-                experiments.
+                Every shop campaign becomes a clean flow: a timed event, a loyalty loop, and
+                a reward mechanism that customers understand instantly.
               </p>
             </Reveal>
 
             <div className="pillars-grid">
               <Reveal variant="up">
                 <div className="pillar pillar-studio">
-                  <p className="pillar-label">Studio</p>
-                  <h3>Product, web and automation</h3>
+                  <p className="pillar-label">Events</p>
+                  <h3>Timed campaigns that feel alive</h3>
                   <p className="small">
-                    Digital products, platforms and brand sites for companies,
-                    creators and startups. Built for clarity and performance.
+                    Drop pages, menu weeks, seasonal promos, “today only” offers — with
+                    countdowns, clear CTAs and redemption built in.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal variant="up">
                 <div className="pillar pillar-network">
-                  <p className="pillar-label">Network</p>
-                  <h3>Forums, hubs and deal flow</h3>
+                  <p className="pillar-label">Loyalty</p>
+                  <h3>Tasks that create repeat visits</h3>
                   <p className="small">
-                    Environments where projects reach out to the right profiles. Used
-                    for hiring, collabs and client work.
+                    Streaks, punch cards, missions (e.g. 3 visits → reward), referrals and
+                    “bring a friend” flows.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal variant="up">
                 <div className="pillar pillar-lab">
-                  <p className="pillar-label">Lab</p>
-                  <h3>Signals, tokens and identity</h3>
+                  <p className="pillar-label">Rewards</p>
+                  <h3>Redeem codes, unlock perks</h3>
                   <p className="small">
-                    Curation engines, token ideas and wallet profiles. Things that can
-                    later become full products.
+                    Discounts, freebies, VIP unlocks — delivered via code/QR redemption with
+                    simple tracking.
                   </p>
                 </div>
               </Reveal>
@@ -119,71 +126,65 @@ function AffiliateSupport() {
           </div>
         </section>
 
-        {/* SIGNATURE CONCEPTS – alt background to break monotony */}
+        {/* SIGNATURE CONCEPTS */}
         <section id="concepts" className="section section-alt">
           <div className="shell">
             <Reveal variant="up" className="section-header">
-              <p className="eyebrow">SIGNATURE CONCEPTS</p>
-              <h2 className="section-title">Concepts that belong to DZ Renzu</h2>
+              <p className="eyebrow">CONCEPTS</p>
+              <h2 className="section-title">Patterns we build for shops</h2>
             </Reveal>
 
             <div className="concepts-grid">
               <Reveal variant="up">
                 <div className="concept-card concept-accent">
-                  <p className="concept-name">Algorithm Zero</p>
+                  <p className="concept-name">Event Landing + Countdown</p>
                   <p className="small">
-                    Manual first curation. Content goes into packs that users choose
-                    instead of chasing a feed.
+                    A campaign page with “live / upcoming”, clear CTA, and a timer that drives action.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal variant="up">
                 <div className="concept-card">
-                  <p className="concept-name">DZ Bridging</p>
+                  <p className="concept-name">Code / QR Redemption</p>
                   <p className="small">
-                    Forum pattern where clients open slots and invite services into one
-                    focused thread.
+                    Customers redeem in seconds. Codes can be limited, timed, or tied to tasks.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal variant="up">
                 <div className="concept-card">
-                  <p className="concept-name">GigHaven</p>
+                  <p className="concept-name">Punch Card Missions</p>
                   <p className="small">
-                    Job radar for creative and tech work. Profiles stay steady, gigs
-                    ping you when the match fits.
+                    “Buy 5 coffees → 6th free”, “3 lunch visits → dessert”, “2 treatments → upgrade”.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal variant="up">
                 <div className="concept-card">
-                  <p className="concept-name">Networking Hubs</p>
+                  <p className="concept-name">Streaks & Weekly Challenges</p>
                   <p className="small">
-                    Rooms for specific scenes. Used for warm intros between founders,
-                    artists, devs and companies.
+                    Keep customers coming back with simple streak logic and weekly goals.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal variant="up">
                 <div className="concept-card concept-soft">
-                  <p className="concept-name">Chain Linked Profiles</p>
+                  <p className="concept-name">VIP Unlocks</p>
                   <p className="small">
-                    Profile layer that connects wallet activity with a human view.
-                    Better way to read on-chain behaviour.
+                    Tiered rewards: bronze/silver/gold perks based on tasks, points, or redemption history.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal variant="up">
                 <div className="concept-card concept-soft">
-                  <p className="concept-name">JOULESIC</p>
+                  <p className="concept-name">Partner Drops</p>
                   <p className="small">
-                    Marketplace idea for producers and sound designers. Uses its own
-                    token and ranking logic to keep quality high.
+                    Co-branded campaigns (fashion x café, spa x restaurant) with shared rewards and tracking.
                   </p>
                 </div>
               </Reveal>
@@ -196,7 +197,7 @@ function AffiliateSupport() {
           <div className="shell">
             <Reveal variant="up" className="section-header">
               <p className="eyebrow">SERVICES</p>
-              <h2 className="section-title">Things you can book with DZ Renzu</h2>
+              <h2 className="section-title">What you can book</h2>
             </Reveal>
 
             <div className="services-layout">
@@ -205,159 +206,135 @@ function AffiliateSupport() {
                 <p className="services-label">Build</p>
 
                 <div className="service-card service-accent">
-                  <h3>🎁 Drop sites and launches</h3>
+                  <h3>🎉 Event mini-sites</h3>
                   <p className="small">
-                    Short lived sites or mini apps for releases, events or product
-                    drops. Codes, waitlists, small games and sponsor slots.
+                    “Now live / next event” landing pages, countdowns, CTAs, and redemption flows.
                   </p>
                 </div>
 
                 <div className="service-card">
-                  <h3>💻 Platforms and web tools</h3>
+                  <h3>🎯 Loyalty task/reward flows</h3>
                   <p className="small">
-                    Custom web apps, dashboards and portals for teams, com or
-                    creator collectives.
+                    Missions, streaks, punch cards, referrals, VIP tiers — simple UX, strong retention.
                   </p>
                 </div>
 
                 <div className="service-card">
-                  <h3>🛒 Ecommerce and funnels</h3>
+                  <h3>🔑 Code / QR redemption systems</h3>
                   <p className="small">
-                    Stores for digital goods, subscriptions or education. Simple flows
-                    and tracking so you can see what works.
+                    Generate, redeem, limit, and track codes. Works for staff scanning or customer input.
                   </p>
                 </div>
 
                 <div className="service-card">
-                  <h3>📦 Brand and portfolio builds</h3>
+                  <h3>📊 Admin dashboard</h3>
                   <p className="small">
-                    Architecture and messaging so sponsors, investors and clients
-                    understand your work fast.
+                    Manage events, rewards, and codes. See what’s working. Keep it lightweight.
                   </p>
                 </div>
               </Reveal>
 
               {/* GROWTH SIDE */}
               <Reveal variant="right" className="services-col">
-                <p className="services-label">Growth</p>
+                <p className="services-label">Campaign</p>
 
                 <div className="service-card">
-                  <h3>📲 Social and content systems</h3>
+                  <h3>🧠 Campaign structure</h3>
                   <p className="small">
-                    Content formats and posting rhythm for your main channels. Designed
-                    so you can keep it running.
+                    Offer design, reward math, timing, and a plan that fits your shop’s reality.
                   </p>
                 </div>
 
                 <div className="service-card">
-                  <h3>🤖 AI helpers and automations</h3>
+                  <h3>📲 Shop-ready content prompts</h3>
                   <p className="small">
-                    Chat tools, content copilots and small scripts inside your stack.
-                    For support, research or content prep.
+                    Social formats and posting rhythm to drive people into the event/loyalty flow.
                   </p>
                 </div>
 
                 <div className="service-card">
-                  <h3>🎨 Designification</h3>
+                  <h3>⚙️ Integrations</h3>
                   <p className="small">
-                    Typography, color tokens and micro interactions that make your
-                    product and back office feel premium.
-                  </p>
-                </div>
-
-                <div className="service-card">
-                  <h3>🌍 Cult Manager</h3>
-                  <p className="small">
-                    Roles, rituals and access logic around your brand so a real
-                    community can form and stay.
+                    Track results and connect to your tools (newsletter, CRM, booking links, etc.).
                   </p>
                 </div>
 
                 <div className="service-card service-soft">
-                  <h3>🤝 Affiliate product stacks</h3>
+                  <h3>🤝 Multi-shop concepts</h3>
                   <p className="small">
-                    Digital products produced inside DZ Renzu. Guides, templates and
-                    tools partners can promote.
+                    City drops, partner rewards, collab campaigns — shared incentives across shops.
                   </p>
                 </div>
               </Reveal>
             </div>
-
-            
           </div>
         </section>
 
-        {/* PROJECTS */}
+        {/* USE CASES (was PROJECTS) */}
         <section id="projects" className="section section-alt">
           <div className="shell">
             <Reveal variant="up" className="section-header">
-              <p className="eyebrow">CURRENT PROJECTS</p>
-              <h2 className="section-title">What is live or in motion</h2>
+              <p className="eyebrow">USE CASES</p>
+              <h2 className="section-title">Examples for different shop types</h2>
             </Reveal>
 
             <div className="projects-grid">
               <Reveal variant="up">
                 <article className="project-card project-dark">
-                  <p className="project-tag">JOULESIC</p>
-                  <h3>Marketplace for producers</h3>
+                  <p className="project-tag">FASHION</p>
+                  <h3>Drop weekend + VIP unlock</h3>
                   <p className="small">
-                    Token based beat and sound market. Focus on curated entry, clear
-                    payouts and long term careers.
+                    Timed landing page + redeem code for early access; repeat visits unlock VIP perks.
                   </p>
                 </article>
               </Reveal>
 
               <Reveal variant="up">
                 <article className="project-card">
-                  <p className="project-tag">GigHaven</p>
-                  <h3>Job environment</h3>
+                  <p className="project-tag">RESTAURANT</p>
+                  <h3>Menu week stamp mission</h3>
                   <p className="small">
-                    Space where gig offers move to the right profiles. A different
-                    angle on freelance work in creative and tech fields.
+                    3 visits during campaign → dessert code. Optional “bring a friend” bonus.
                   </p>
                 </article>
               </Reveal>
 
               <Reveal variant="up">
                 <article className="project-card">
-                  <p className="project-tag">Networking hubs</p>
-                  <h3>Rooms for scenes</h3>
+                  <p className="project-tag">CAFÉ</p>
+                  <h3>Streak rewards</h3>
                   <p className="small">
-                    Structured hubs for music, design and product people. Used for
-                    intros, deals and small events.
+                    Visit streaks (2x / 4x / 6x) unlock escalating rewards and keep people returning.
                   </p>
                 </article>
               </Reveal>
 
               <Reveal variant="up">
                 <article className="project-card project-soft">
-                  <p className="project-tag">Chain linked profiles</p>
-                  <h3>Wallet identity view</h3>
+                  <p className="project-tag">SPA</p>
+                  <h3>Challenge: 2 sessions → upgrade</h3>
                   <p className="small">
-                    Interface that shows wallet activity together with a person
-                    profile. Easier for normal users and institutions.
+                    Simple task ladder that nudges bookings and creates predictable return behavior.
                   </p>
                 </article>
               </Reveal>
 
               <Reveal variant="up">
                 <article className="project-card">
-                  <p className="project-tag">Ecommerce builds</p>
-                  <h3>Stores for digital goods</h3>
+                  <p className="project-tag">MULTI-SHOP</p>
+                  <h3>Partner campaign</h3>
                   <p className="small">
-                    Storefronts and funnels for music, learning products and creator
-                    tools. Ready for partners and bundles.
+                    Fashion x café collab: redeem across both shops, shared incentive, shared tracking.
                   </p>
                 </article>
               </Reveal>
 
               <Reveal variant="up">
                 <article className="project-card">
-                  <p className="project-tag">Affiliate product line</p>
-                  <h3>DZ Renzu stack</h3>
+                  <p className="project-tag">LOYALTY</p>
+                  <h3>Tiered VIP access</h3>
                   <p className="small">
-                    PDFs, templates and utilities developed in the studio and
-                    distributed through partner networks.
+                    Bronze/Silver/Gold perks based on tasks completed — simple, addictive, clear.
                   </p>
                 </article>
               </Reveal>
@@ -371,16 +348,15 @@ function AffiliateSupport() {
             <Reveal variant="up" className="contact-layout">
               <div className="contact-copy">
                 <p className="eyebrow">CONTACT</p>
-                <h2 className="section-title">Work with DZ Renzu</h2>
+                <h2 className="section-title">Let’s build your shop flow</h2>
                 <p className="section-intro">
-                  Based in Frankfurt. Open for brands, creators, agencies, freelancers and
-                  other studios.
+                  Tell us your shop type, what you want to run (event or loyalty), and what a “win” looks like
+                  (more visits, more bookings, more redemptions).
                 </p>
+
                 <p className="tiny">
                   Or write directly:{" "}
-                  <a href="mailto:lennardfeist@gmail.com">
-                    lennardfeist@gmail.com
-                  </a>
+                  <a href="mailto:lennardfeist@gmail.com">lennardfeist@gmail.com</a>
                 </p>
               </div>
 
@@ -390,8 +366,15 @@ function AffiliateSupport() {
         </section>
       </main>
 
+      {/* Footer: includes a direct contact anchor + mail (the “item down under”) */}
       <footer className="legal-footer">
         <div className="legal-buttons">
+          <a className="btn-outline tiny" href="#contact">
+            Contact
+          </a>
+          <a className="btn-outline tiny" href="mailto:lennardfeist@gmail.com">
+            Email
+          </a>
           <Link className="btn-outline tiny" to="/rechtliches#imprint">
             Imprint
           </Link>
@@ -406,7 +389,7 @@ function AffiliateSupport() {
   );
 }
 
-/* CONTACT FORM (Supabase, using Vite env) */
+/* CONTACT FORM (Supabase insert -> contact_messages) */
 function ContactForm() {
   const [form, setForm] = useState({
     name: "",
@@ -429,42 +412,22 @@ function ContactForm() {
     setErrorMsg("");
 
     try {
-      const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-      const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-      if (!SUPABASE_URL || !SUPABASE_KEY) {
-        throw new Error("Supabase env vars missing");
-      }
-
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          Prefer: "return=representation",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          description: form.description,
-          user_agent: window.navigator.userAgent || null,
-        }),
+      // ✅ Inserts exactly matching your table columns
+      const { error } = await supabase.from("contact_messages").insert({
+        name: form.name,
+        email: form.email,
+        description: form.description,
+        user_agent: window.navigator.userAgent || null,
       });
 
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || "Failed to send");
-      }
+      if (error) throw error;
 
       setStatus("success");
       setForm({ name: "", email: "", description: "" });
     } catch (err) {
       console.error(err);
       setStatus("error");
-      setErrorMsg(
-        "Something went wrong. Please use email if this keeps happening."
-      );
+      setErrorMsg("Something went wrong. Please use email if this keeps happening.");
     }
   };
 
@@ -480,6 +443,7 @@ function ContactForm() {
           required
         />
       </label>
+
       <label className="field">
         <span>Email</span>
         <input
@@ -487,38 +451,31 @@ function ContactForm() {
           name="email"
           value={form.email}
           onChange={handleChange}
-          placeholder="you@example.com"
+          placeholder="you@shop.com"
           required
         />
       </label>
+
       <label className="field">
-        <span>What do you want to build?</span>
+        <span>What do you want to run?</span>
         <textarea
           name="description"
           value={form.description}
           onChange={handleChange}
-          placeholder="Short description of your idea, project or question."
+          placeholder="Example: 10-day café campaign with redeem codes + a 3-visit reward mission. Goal: +20% repeat visits."
           rows={4}
           required
         />
       </label>
 
-      <button
-        className="btn btn-large"
-        type="submit"
-        disabled={status === "loading"}
-      >
+      <button className="btn btn-large" type="submit" disabled={status === "loading"}>
         {status === "loading" ? "Sending..." : "Send message"}
       </button>
 
       {status === "success" && (
-        <p className="tiny contact-success">
-          Thank you. Message stored in the system.
-        </p>
+        <p className="tiny contact-success">Thanks — message saved. We’ll reply by email.</p>
       )}
-      {status === "error" && (
-        <p className="tiny contact-error">{errorMsg}</p>
-      )}
+      {status === "error" && <p className="tiny contact-error">{errorMsg}</p>}
     </form>
   );
 }
@@ -535,14 +492,14 @@ function SiteNav() {
           </a>
 
           <nav className="nav-links">
-            <a href="#pillars">Pillars</a>
+            <a href="#pillars">Solutions</a>
             <a href="#concepts">Concepts</a>
             <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
+            <a href="#projects">Use cases</a>
           </nav>
 
           <a href="#contact" className="btn nav-cta">
-            Connect
+            Contact
           </a>
         </div>
       </div>
@@ -581,19 +538,10 @@ function useRevealOnScroll(delay = 0) {
   return ref;
 }
 
-function Reveal({
-  children,
-  as: Tag = "div",
-  variant = "up",
-  delay = 0,
-  className = "",
-}) {
+function Reveal({ children, as: Tag = "div", variant = "up", delay = 0, className = "" }) {
   const ref = useRevealOnScroll(delay);
   return (
-    <Tag
-      ref={ref}
-      className={`reveal reveal-${variant} ${className}`.trim()}
-    >
+    <Tag ref={ref} className={`reveal reveal-${variant} ${className}`.trim()}>
       {children}
     </Tag>
   );
@@ -657,7 +605,7 @@ function AeroBackground() {
   );
 }
 
-/* GLOBAL STYLES */
+/* GLOBAL STYLES (unchanged) */
 function GlobalStyles() {
   return (
     <style>{`
@@ -673,9 +621,7 @@ function GlobalStyles() {
         --accent-2:#57c4ff;
       }
 
-      *{
-        box-sizing:border-box;
-      }
+      *{ box-sizing:border-box; }
 
       body{
         margin:0;
@@ -685,593 +631,192 @@ function GlobalStyles() {
         overflow-x:hidden;
       }
 
-      .page{
-        position:relative;
-        z-index:2;
-        padding:18px 0 72px;
-      }
+      .page{ position:relative; z-index:2; padding:18px 0 72px; }
+      .shell{ width:100%; max-width:1120px; margin:0 auto; padding:0 18px; }
+      .section{ position:relative; padding:52px 0; }
+      .section-alt{ background:radial-gradient(circle at top,#e0f2ff 0%,#f7fbff 40%,#edf5ff 100%); }
 
-      .shell{
-        width:100%;
-        max-width:1120px;
-        margin:0 auto;
-        padding:0 18px;
-      }
-
-      .section{
-        position:relative;
-        padding:52px 0;
-      }
-
-      .section-alt{
-        background:radial-gradient(circle at top,#e0f2ff 0%,#f7fbff 40%,#edf5ff 100%);
-      }
-
-      /* NAVBAR */
-      .nav-wrap{
-        position:sticky;
-        top:10px;
-        z-index:20;
-      }
-
+      .nav-wrap{ position:sticky; top:10px; z-index:20; }
       .nav-inner{
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:18px;
-        padding:10px 18px;
-        border-radius:999px;
-        background:rgba(246,252,255,0.92);
-        border:1px solid rgba(184,224,246,0.9);
-        backdrop-filter:blur(18px);
+        display:flex; align-items:center; justify-content:space-between; gap:18px;
+        padding:10px 18px; border-radius:999px; background:rgba(246,252,255,0.92);
+        border:1px solid rgba(184,224,246,0.9); backdrop-filter:blur(18px);
         box-shadow:0 18px 40px rgba(160,208,240,0.35);
       }
-
-      .logo{
-        display:flex;
-        align-items:center;
-        gap:8px;
-        text-decoration:none;
-        color:inherit;
-      }
-
+      .logo{ display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit; }
       .logo-mark{
-        width:30px;
-        height:30px;
-        border-radius:10px;
+        width:30px; height:30px; border-radius:10px;
         background:linear-gradient(135deg,var(--accent),var(--accent-2));
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-size:.9rem;
-        font-weight:800;
-        color:#fff;
+        display:flex; align-items:center; justify-content:center;
+        font-size:.9rem; font-weight:800; color:#fff;
       }
+      .logo-text{ font-weight:800; letter-spacing:.08em; font-size:.85rem; text-transform:uppercase; }
 
-      .logo-text{
-        font-weight:800;
-        letter-spacing:.08em;
-        font-size:.85rem;
-        text-transform:uppercase;
-      }
-
-      .nav-links{
-        display:flex;
-        gap:14px;
-        font-size:.86rem;
-      }
-
+      .nav-links{ display:flex; gap:14px; font-size:.86rem; }
       .nav-links a{
-        text-decoration:none;
-        color:#1e293b;
-        padding:4px 8px;
-        border-radius:999px;
-        transition:background .18s ease, transform .18s ease;
+        text-decoration:none; color:#1e293b; padding:4px 8px;
+        border-radius:999px; transition:background .18s ease, transform .18s ease;
       }
+      .nav-links a:hover{ background:rgba(192,231,255,0.9); transform:translateY(-1px); }
+      .nav-cta{ font-size:.86rem; padding:9px 18px; }
 
-      .nav-links a:hover{
-        background:rgba(192,231,255,0.9);
-        transform:translateY(-1px);
-      }
-
-      .nav-cta{
-        font-size:.86rem;
-        padding:9px 18px;
-      }
-
-      /* HERO */
-      .hero-section{
-        padding-top:62px;
-      }
-
-      .hero-layout{
-        display:grid;
-        grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
-        gap:32px;
-        align-items:center;
-      }
-
-      .hero-copy{
-        max-width:640px;
-      }
+      .hero-section{ padding-top:62px; }
+      .hero-layout{ display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:32px; align-items:center; }
+      .hero-copy{ max-width:640px; }
 
       .eyebrow{
-        font-size:.78rem;
-        letter-spacing:.18em;
-        text-transform:uppercase;
-        color:#60a5fa;
-        font-weight:700;
-        margin:0 0 12px;
+        font-size:.78rem; letter-spacing:.18em; text-transform:uppercase;
+        color:#60a5fa; font-weight:700; margin:0 0 12px;
       }
-
       .hero-title{
-        margin:0 0 14px;
-        font-size:clamp(2.4rem,4.4vw,3.4rem);
-        line-height:1.05;
-        font-weight:800;
+        margin:0 0 14px; font-size:clamp(2.4rem,4.4vw,3.4rem); line-height:1.05; font-weight:800;
         background:linear-gradient(135deg,var(--accent) 0%, var(--accent-2) 50%, #e9f7ff 100%);
-        -webkit-background-clip:text;
-        background-clip:text;
-        color:transparent;
+        -webkit-background-clip:text; background-clip:text; color:transparent;
       }
-
-      .hero-lede{
-        margin:0 0 18px;
-        font-size:1rem;
-        max-width:62ch;
-      }
-
-      .hero-goals{
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-        margin-bottom:18px;
-      }
-
+      .hero-lede{ margin:0 0 18px; font-size:1rem; max-width:62ch; }
+      .hero-goals{ display:flex; flex-direction:column; gap:10px; margin-bottom:18px; }
       .hero-goal-label{
-        font-size:.8rem;
-        text-transform:uppercase;
-        letter-spacing:.14em;
-        color:#64748b;
+        font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:#64748b;
         margin:0 0 3px;
       }
-
-      .hero-goal{
-        margin:0;
-        font-size:.96rem;
-      }
-
+      .hero-goal{ margin:0; font-size:.96rem; }
       .hero-pill-row{
-        display:flex;
-        flex-wrap:wrap;
-        gap:8px;
-        font-size:.8rem;
-        text-transform:uppercase;
-        letter-spacing:.12em;
-        color:#64748b;
+        display:flex; flex-wrap:wrap; gap:8px; font-size:.8rem;
+        text-transform:uppercase; letter-spacing:.12em; color:#64748b;
       }
+      .hero-pill-row span{ padding:5px 10px; border-radius:999px; border:1px solid #d2e9ff; background:#f3fbff; }
 
-      .hero-pill-row span{
-        padding:5px 10px;
-        border-radius:999px;
-        border:1px solid #d2e9ff;
-        background:#f3fbff;
-      }
+      .hero-cta-row{ display:flex; flex-wrap:wrap; gap:10px; }
 
-      .hero-cta-row{
-        display:flex;
-        flex-wrap:wrap;
-        gap:10px;
-      }
-
-      .hero-visual{
-        display:flex;
-        flex-direction:column;
-        gap:14px;
-        align-items:center;
-      }
-
+      .hero-visual{ display:flex; flex-direction:column; gap:14px; align-items:center; }
       .hero-orbit{
-        position:relative;
-        width:260px;
-        aspect-ratio:1/1;
-        border-radius:50%;
+        position:relative; width:260px; aspect-ratio:1/1; border-radius:50%;
         background:radial-gradient(circle at 20% 0,var(--accent-2),#0f172a);
         box-shadow:0 22px 60px rgba(15,23,42,0.7);
         border:1.5px solid rgba(148,197,255,0.9);
-        display:flex;
-        align-items:center;
-        justify-content:center;
+        display:flex; align-items:center; justify-content:center;
       }
-
       .hero-orbit-core{
-        padding:10px 16px;
-        border-radius:999px;
-        background:#020617;
-        color:#e5f3ff;
-        font-size:.85rem;
-        font-weight:700;
-        letter-spacing:.08em;
-        text-transform:uppercase;
+        padding:10px 16px; border-radius:999px; background:#020617; color:#e5f3ff;
+        font-size:.85rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
       }
-
       .hero-orbit-pill{
-        position:absolute;
-        padding:6px 11px;
-        border-radius:999px;
-        background:rgba(15,23,42,0.9);
-        color:#e5f3ff;
-        font-size:.78rem;
-        border:1px solid rgba(148,197,255,0.9);
-        backdrop-filter:blur(14px);
+        position:absolute; padding:6px 11px; border-radius:999px; background:rgba(15,23,42,0.9);
+        color:#e5f3ff; font-size:.78rem; border:1px solid rgba(148,197,255,0.9); backdrop-filter:blur(14px);
       }
+      .hero-orbit-pill--studio{ top:16px; left:50%; transform:translateX(-50%); }
+      .hero-orbit-pill--network{ bottom:22px; left:14px; }
+      .hero-orbit-pill--lab{ bottom:22px; right:14px; }
 
-      .hero-orbit-pill--studio{
-        top:16px;
-        left:50%;
-        transform:translateX(-50%);
-      }
+      .hero-badges{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; font-size:.78rem; }
+      .hero-badge{ padding:4px 10px; border-radius:999px; border:1px solid #c4e1ff; background:#f5fbff; }
 
-      .hero-orbit-pill--network{
-        bottom:22px;
-        left:14px;
-      }
+      .section-header{ max-width:760px; margin-bottom:26px; }
+      .section-title{ margin:0 0 10px; font-size:1.8rem; }
+      .section-intro{ margin:0; font-size:.96rem; max-width:60ch; }
 
-      .hero-orbit-pill--lab{
-        bottom:22px;
-        right:14px;
-      }
+      .small{ font-size:.92rem; opacity:.95; }
+      .tiny{ font-size:.8rem; opacity:.9; }
 
-      .hero-badges{
-        display:flex;
-        flex-wrap:wrap;
-        gap:8px;
-        justify-content:center;
-        font-size:.78rem;
-      }
-
-      .hero-badge{
-        padding:4px 10px;
-        border-radius:999px;
-        border:1px solid #c4e1ff;
-        background:#f5fbff;
-      }
-
-      .section-header{
-        max-width:760px;
-        margin-bottom:26px;
-      }
-
-      .section-title{
-        margin:0 0 10px;
-        font-size:1.8rem;
-      }
-
-      .section-intro{
-        margin:0;
-        font-size:.96rem;
-        max-width:60ch;
-      }
-
-      .small{
-        font-size:.92rem;
-        opacity:.95;
-      }
-
-      .tiny{
-        font-size:.8rem;
-        opacity:.9;
-      }
-
-      /* PILLARS */
-      .pillars-grid{
-        display:grid;
-        grid-template-columns:repeat(3,minmax(0,1fr));
-        gap:20px;
-      }
-
+      .pillars-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
       .pillar{
-        border-radius:22px;
-        padding:18px 18px 16px;
-        background:#ffffffcc;
-        border:1.5px solid #d3ebff;
-        box-shadow:0 14px 40px rgba(179,223,255,0.6);
+        border-radius:22px; padding:18px 18px 16px; background:#ffffffcc;
+        border:1.5px solid #d3ebff; box-shadow:0 14px 40px rgba(179,223,255,0.6);
       }
-
-      .pillar-label{
-        font-size:.8rem;
-        text-transform:uppercase;
-        letter-spacing:.14em;
-        margin:0 0 4px;
-      }
-
+      .pillar-label{ font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; margin:0 0 4px; }
       .pillar-studio .pillar-label{ color:#2563eb; }
       .pillar-network .pillar-label{ color:#0f766e; }
       .pillar-lab .pillar-label{ color:#7c3aed; }
+      .pillar h3{ margin:0 0 6px; font-size:1.02rem; }
 
-      .pillar h3{
-        margin:0 0 6px;
-        font-size:1.02rem;
-      }
-
-      /* CONCEPTS */
-      .concepts-grid{
-        display:grid;
-        grid-template-columns:repeat(3,minmax(0,1fr));
-        gap:18px;
-      }
-
+      .concepts-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
       .concept-card{
-        border-radius:20px;
-        padding:14px 14px 12px;
-        background:#ffffff;
-        border:1.5px solid #d3ebff;
-        box-shadow:0 10px 30px rgba(179,223,255,0.55);
+        border-radius:20px; padding:14px 14px 12px; background:#ffffff;
+        border:1.5px solid #d3ebff; box-shadow:0 10px 30px rgba(179,223,255,0.55);
       }
+      .concept-accent{ background:linear-gradient(135deg,#e0f4ff,#ffffff); }
+      .concept-soft{ background:linear-gradient(135deg,#f8f5ff,#ffffff); }
+      .concept-name{ font-size:.94rem; font-weight:600; margin:0 0 6px; }
 
-      .concept-accent{
-        background:linear-gradient(135deg,#e0f4ff,#ffffff);
-      }
-
-      .concept-soft{
-        background:linear-gradient(135deg,#f8f5ff,#ffffff);
-      }
-
-      .concept-name{
-        font-size:.94rem;
-        font-weight:600;
-        margin:0 0 6px;
-      }
-
-      /* SERVICES */
-      .services-layout{
-        display:grid;
-        grid-template-columns:minmax(0,1.2fr) minmax(0,1.2fr);
-        gap:24px;
-      }
-
-      .services-col{
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-      }
-
-      .services-label{
-        font-size:.8rem;
-        text-transform:uppercase;
-        letter-spacing:.12em;
-        color:#64748b;
-        margin:0 0 4px;
-      }
-
+      .services-layout{ display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1.2fr); gap:24px; }
+      .services-col{ display:flex; flex-direction:column; gap:10px; }
+      .services-label{ font-size:.8rem; text-transform:uppercase; letter-spacing:.12em; color:#64748b; margin:0 0 4px; }
       .service-card{
-        border-radius:20px;
-        padding:14px 14px 12px;
-        background:#ffffff;
-        border:1.5px solid #d3ebff;
-        box-shadow:0 10px 28px rgba(179,223,255,0.55);
+        border-radius:20px; padding:14px 14px 12px; background:#ffffff;
+        border:1.5px solid #d3ebff; box-shadow:0 10px 28px rgba(179,223,255,0.55);
       }
+      .service-card h3{ margin:0 0 6px; font-size:1.02rem; }
+      .service-accent{ background:linear-gradient(135deg,#e0f4ff,#ffffff); }
+      .service-soft{ background:linear-gradient(135deg,#fdf5ff,#ffffff); }
 
-      .service-card h3{
-        margin:0 0 6px;
-        font-size:1.02rem;
-      }
-
-      .service-accent{
-        background:linear-gradient(135deg,#e0f4ff,#ffffff);
-      }
-
-      .service-soft{
-        background:linear-gradient(135deg,#fdf5ff,#ffffff);
-      }
-
-      .fos-note{
-        margin-top:26px;
-      }
-
-      .fos-card{
-        border-radius:20px;
-        padding:14px 14px 12px;
-        background:#0f172a;
-        color:#e5f3ff;
-        border:1.5px solid #4f9bff;
-        box-shadow:0 16px 40px rgba(15,23,42,0.75);
-      }
-
-      .fos-card h3{
-        margin:0 0 6px;
-        font-size:1.02rem;
-      }
-
-      /* PROJECTS */
-      .projects-grid{
-        display:grid;
-        grid-template-columns:repeat(3,minmax(0,1fr));
-        gap:18px;
-      }
-
+      .projects-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
       .project-card{
-        border-radius:20px;
-        padding:14px 14px 12px;
-        background:#ffffff;
-        border:1.5px solid #d3ebff;
-        box-shadow:0 10px 28px rgba(179,223,255,0.6);
+        border-radius:20px; padding:14px 14px 12px; background:#ffffff;
+        border:1.5px solid #d3ebff; box-shadow:0 10px 28px rgba(179,223,255,0.6);
       }
-
       .project-dark{
         background:linear-gradient(135deg,#020617,#0b1120);
-        color:#e5f3ff;
-        border-color:#4f9bff;
+        color:#e5f3ff; border-color:#4f9bff;
       }
-
-      .project-soft{
-        background:linear-gradient(135deg,#f9f5ff,#ffffff);
-      }
-
+      .project-soft{ background:linear-gradient(135deg,#f9f5ff,#ffffff); }
       .project-tag{
-        font-size:.8rem;
-        text-transform:uppercase;
-        letter-spacing:.14em;
-        color:#60a5fa;
-        margin:0 0 4px;
+        font-size:.8rem; text-transform:uppercase; letter-spacing:.14em;
+        color:#60a5fa; margin:0 0 4px;
       }
+      .project-dark .project-tag{ color:#93c5fd; }
+      .project-card h3{ margin:0 0 6px; font-size:1.02rem; }
 
-      .project-dark .project-tag{
-        color:#93c5fd;
-      }
-
-      .project-card h3{
-        margin:0 0 6px;
-        font-size:1.02rem;
-      }
-
-      /* CONTACT */
-      .contact-layout{
-        display:flex;
-        flex-wrap:wrap;
-        gap:24px;
-        align-items:flex-start;
-      }
-
-      .contact-copy{
-        flex:1.2;
-        min-width:240px;
-      }
-
+      .contact-layout{ display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; }
+      .contact-copy{ flex:1.2; min-width:240px; }
       .contact-form{
-        flex:1.2;
-        min-width:260px;
-        display:flex;
-        flex-direction:column;
-        gap:10px;
-        padding:16px 16px 14px;
-        border-radius:20px;
-        background:#ffffff;
-        border:1.5px solid #d3ebff;
-        box-shadow:0 12px 34px rgba(179,223,255,0.65);
+        flex:1.2; min-width:260px; display:flex; flex-direction:column; gap:10px;
+        padding:16px 16px 14px; border-radius:20px; background:#ffffff;
+        border:1.5px solid #d3ebff; box-shadow:0 12px 34px rgba(179,223,255,0.65);
       }
+      .field{ display:flex; flex-direction:column; gap:4px; font-size:.86rem; }
+      .field span{ color:#4b5563; }
+      .field input, .field textarea{
+        padding:10px 11px; border-radius:10px; border:1.5px solid #cfe5ff;
+        font:inherit; outline:none; background:#f9fcff;
+      }
+      .field textarea{ resize:vertical; }
 
-      .field{
-        display:flex;
-        flex-direction:column;
-        gap:4px;
-        font-size:.86rem;
-      }
-
-      .field span{
-        color:#4b5563;
-      }
-
-      .field input,
-      .field textarea{
-        padding:10px 11px;
-        border-radius:10px;
-        border:1.5px solid #cfe5ff;
-        font:inherit;
-        outline:none;
-        background:#f9fcff;
-      }
-
-      .field textarea{
-        resize:vertical;
-      }
-
-      .contact-success{
-        color:#16a34a;
-      }
-
-      .contact-error{
-        color:#b91c1c;
-      }
+      .contact-success{ color:#16a34a; }
+      .contact-error{ color:#b91c1c; }
 
       .btn{
-        padding:12px 20px;
-        border-radius:999px;
-        background:#020617;
-        color:#fff;
-        font-weight:800;
-        text-decoration:none;
-        border:none;
-        cursor:pointer;
-        font-size:.9rem;
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        gap:6px;
+        padding:12px 20px; border-radius:999px; background:#020617; color:#fff;
+        font-weight:800; text-decoration:none; border:none; cursor:pointer; font-size:.9rem;
+        display:inline-flex; align-items:center; justify-content:center; gap:6px;
         box-shadow:0 14px 35px rgba(15,23,42,0.45);
         transform:translateY(0);
         transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
       }
-
-      .btn:hover{
-        transform:translateY(-1px);
-        box-shadow:0 20px 45px rgba(15,23,42,0.55);
-        background:#02040c;
-      }
-
-      .btn-large{
-        padding:14px 24px;
-      }
-
+      .btn:hover{ transform:translateY(-1px); box-shadow:0 20px 45px rgba(15,23,42,0.55); background:#02040c; }
+      .btn-large{ padding:14px 24px; }
       .btn-outline{
-        padding:11px 16px;
-        border-radius:999px;
-        border:1.5px solid #020617;
-        color:#020617;
-        font-weight:700;
-        text-decoration:none;
-        font-size:.86rem;
+        padding:11px 16px; border-radius:999px; border:1.5px solid #020617;
+        color:#020617; font-weight:700; text-decoration:none; font-size:.86rem;
         background:transparent;
         transition:background .18s ease,color .18s ease,transform .18s ease;
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
+        display:inline-flex; align-items:center; justify-content:center;
       }
+      .btn-outline:hover{ background:#020617; color:#fff; transform:translateY(-1px); }
 
-      .btn-outline:hover{
-        background:#020617;
-        color:#fff;
-        transform:translateY(-1px);
-      }
+      .legal-footer{ display:flex; justify-content:center; margin:8px 0 40px; }
+      .legal-buttons{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
 
-      /* FOOTER */
-      .legal-footer{
-        display:flex;
-        justify-content:center;
-        margin:8px 0 40px;
-      }
-
-      .legal-buttons{
-        display:flex;
-        gap:10px;
-      }
-
-      /* REVEAL ANIMATION */
       .reveal{
-        opacity:0;
-        transform:translateY(20px);
-        filter:blur(10px);
-        transition:
-          opacity .7s cubic-bezier(.21,.72,.21,1),
-          transform .7s cubic-bezier(.21,.72,.21,1),
-          filter .7s ease;
+        opacity:0; transform:translateY(20px); filter:blur(10px);
+        transition: opacity .7s cubic-bezier(.21,.72,.21,1),
+                    transform .7s cubic-bezier(.21,.72,.21,1),
+                    filter .7s ease;
         will-change:opacity,transform,filter;
       }
+      .reveal-left{ transform:translateX(-32px); }
+      .reveal-right{ transform:translateX(32px); }
+      .reveal.is-visible{ opacity:1; transform:translate3d(0,0,0); filter:blur(0); }
 
-      .reveal-left{
-        transform:translateX(-32px);
-      }
-      .reveal-right{
-        transform:translateX(32px);
-      }
-
-      .reveal.is-visible{
-        opacity:1;
-        transform:translate3d(0,0,0);
-        filter:blur(0);
-      }
-
-      /* RESPONSIVE */
       @media(max-width:900px){
         .nav-links{ display:none; }
         .nav-inner{ border-radius:20px; }
